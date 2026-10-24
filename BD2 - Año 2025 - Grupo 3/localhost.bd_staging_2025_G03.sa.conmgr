@@ -1,0 +1,16 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.bd_staging_2025_G03.sa"
+  DTS:DTSID="{0D9AF437-2004-48B9-810E-CD259096B4C0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=bd_staging_2025_G03;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-BD2 - Año 2025 - Grupo 3-{0D9AF437-2004-48B9-810E-CD259096B4C0}localhost.bd_staging_2025_G03.sa;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiaO9OlmoEEGv6w6uCjAocQAAAAACAAAAAAAQZgAAAAEAACAAAAD7e2ONc5NvD1PtyUZBG3Ih9CvZGp2y/m+16pbSbIvz1QAAAAAOgAAAAAIAACAAAACwtAu65CEzw+cBzTfr60mApRM3sYNsidq2oLS0njZovYAAAAA2qbEdgRCjC/JvpEYbMSvaQmxA8Xkv9bLfmCKYLi72vpCCOpXnOMIMP2qsNomawD3ZPC6hea3f+4fVWWhgPNG+m7fleGFbrH2OmJpT6ka9s/vgKQTHn381wdJ9U2JsT5JkDQyvHMAHBZ9iBFX54qgS0JYE/kLkWha9u3GoFqhzL0AAAADCoNFLEer+sgEv8lyK/P5r53tkyadWuV+Y0zjgWFk2yCiuPfzqCRcWtsChkfKDkUw7S6AfuZSBzhL+kOdd3fC1</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sales_mysql.tuia_alumnos"
+  DTS:DTSID="{3E456F49-9DAD-4282-AEED-1DA002EA42FC}"
+  DTS:CreationName="ADO.NET:Devart.Data.MySql.MySqlConnection, Devart.Data.MySql, Version=9.4.190.0, Culture=neutral, PublicKeyToken=09af7300eec23701">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="User Id=tuia_alumnos;Host=arggf.ddns.net;Database=sales;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiaO9OlmoEEGv6w6uCjAocQAAAAACAAAAAAAQZgAAAAEAACAAAABeRcfKrTnNK3GeUfMpg4r5uCvs+7KzCCbyEmFuRJPr4gAAAAAOgAAAAAIAACAAAAD+KniofF6r2vut2kcPMCmomQ9DBXc/+bldoVwQhKzlfoAAAADfDUu4BFIJZiKuTppV8FNShC2ZistHhnqkPpH2rqIMb7W3eFfGuX5duRMZbMuCUok4Ef9SRx3y/BF/w1EgH6VQ+ahJl3GUZk8FdIteDvuDzKkZB88O57TPYQTbfp35rct6C0WmFE+d5JPwTD32hsWnQ2DYuHHFlwHqwNxJEMcghUAAAACN0uYOnH4hWY+5arSZQc50fnJaTAOyVuj7EAX0yVFZ3R41q0Y4E03GQHDDlfcS5QA4WKZn6nk6TD8h9bBvE95J</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

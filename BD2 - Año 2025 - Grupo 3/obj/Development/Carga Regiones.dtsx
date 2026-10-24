@@ -1,0 +1,750 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/22/2025 10:41:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ROADM227"
+  DTS:CreatorName="WIENER-LAB\vlujambio"
+  DTS:DTSID="{369F2D89-F952-4BE2-B612-98E944049FBB}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Package1"
+  DTS:PackageType="5"
+  DTS:VersionBuild="8"
+  DTS:VersionGUID="{D9AF1585-D4BA-404E-8165-60666FF3CCCF}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Carga Stock]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{470FDC33-7332-4FFC-99D6-4B4753739D06}"
+      DTS:ObjectName="Carga Stock">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="11274"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Stock.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id_Producto_Stock"
+              DTS:DTSID="{107F7C39-7E04-4075-8E30-F592AE807CA7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha_Stock"
+              DTS:DTSID="{91D07AB9-3F33-4596-990A-9747CF2BA257}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cantidad_Producto_Stock"
+              DTS:DTSID="{9A2514FC-A901-4429-AC1F-1E0C3D04E809}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{943C4991-A7CE-4674-A854-A95E5BC60875}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{2E196D17-9603-4C0E-8632-DDE8AE06B642}"
+      DTS:ObjectName="localhost.bd_staging_2025_G03">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=bd_staging_2025_G03;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Regiones TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A76B0E0A-D95D-463D-BC3C-5BE5F4B19537}"
+      DTS:ObjectName="Regiones TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="11274"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Regions.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region_Region"
+              DTS:DTSID="{9CC1DAE3-5CE7-4253-81A8-869693000ADC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ciudad_Region"
+              DTS:DTSID="{BF56E63D-8533-4EE9-9AA2-DE56F496DF5B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Distrito_Region"
+              DTS:DTSID="{8370E19C-71D7-4C45-B58B-C787BBC4AD32}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codigo_Postal_Region"
+              DTS:DTSID="{69902BF4-EF91-4C50-B1EC-BEB674C15F3A}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ROADM227.bd_staging_2025_G14.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{E4167850-37C2-4558-B451-AD795F397958}"
+      DTS:ObjectName="ROADM227.bd_staging_2025_G14.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ROADM227;User ID=sa;Initial Catalog=bd_staging_2025_G14;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{E4167850-37C2-4558-B451-AD795F397958}ROADM227.bd_staging_2025_G14.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiaO9OlmoEEGv6w6uCjAocQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAB/MoWsNUTULjFnvQ7jbsX3II1PS2D9xjFWIjwdUeqUTgAAAAAOgAAAAAIAACAAAACRtGn+av+8ESE4bwanvTSvs7mp/akQ9f61uMGqacPiCCAAAAB7dc/GXaydZsORt113DGs8m+3lM8RsRW93cF/oONw9n0AAAABLQ8yx9hhVYWAu3z8eVFWVOaPTjgyFUH6V4o+6qVfvNsXocvuiqCk8ykCG1/rI7ReciNzTc8yOZxiKVCAEbH1x</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Regiones DW"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:Disabled="True"
+      DTS:DTSID="{18ea379f-5309-4f8c-9885-06a3ae6bd82a}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Regiones DW"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Regiones Intermedia"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:Disabled="True"
+      DTS:DTSID="{8cf975d0-9a59-4efb-801f-4209ad82b3d4}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Regiones Intermedia"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Regiones Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{61617547-5ec4-4282-af8c-b43a03cb38e5}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Regiones Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Regiones Staging\Source Regions Txt"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Origen de archivo plano;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Origen de archivo plano"
+              localeId="11274"
+              name="Source Regions Txt"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Especifica si las columnas de longitud cero se tratan como NULL."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre de una columna de salida que contiene el nombre de archivo. Si no se especifica ningún nombre, no se genera ninguna columna de salida con el nombre de archivo."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Regiones Staging\Source Regions Txt.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Regiones TXT]"
+                  connectionManagerRefId="Package.ConnectionManagers[Regiones TXT]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano]"
+                  name="Salida de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Region_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Region_Region]"
+                      length="50"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Region_Region]"
+                      name="Region_Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Ciudad_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Ciudad_Region]"
+                      length="50"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Ciudad_Region]"
+                      name="Ciudad_Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Distrito_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Distrito_Region]"
+                      length="50"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Distrito_Region]"
+                      name="Distrito_Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Codigo_Postal_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Codigo_Postal_Region]"
+                      length="50"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Codigo_Postal_Region]"
+                      name="Codigo_Postal_Region"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si la columna usa las rutinas de análisis más rápidas independientes de la configuración regional."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica si los datos están en formato binario."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Region_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Ciudad_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ciudad_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Distrito_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Distrito_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].ExternalColumns[Codigo_Postal_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Codigo_Postal_Region" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de archivo plano">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Columna de salida de error de origen de archivo plano"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[Columna de salida de error de origen de archivo plano]"
+                      name="Columna de salida de error de origen de archivo plano" />
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de error de origen de archivo plano].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Regiones Staging\stg_regiones_G03"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="stg_regiones_G03"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stg_regiones_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Regiones Staging\stg_regiones_G03.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].Columns[Region_Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Region_Region"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region_Region]"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Region_Region]" />
+                    <inputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].Columns[Ciudad_Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ciudad_Region"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad_Region]"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Ciudad_Region]" />
+                    <inputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].Columns[Distrito_Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Distrito_Region"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Distrito_Region]"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Distrito_Region]" />
+                    <inputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].Columns[Codigo_Postal_Region]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Codigo_Postal_Region"
+                      externalMetadataColumnId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal_Region]"
+                      lineageId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano].Columns[Codigo_Postal_Region]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Region_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Region_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Ciudad_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Distrito_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Distrito_Region" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal_Region]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Codigo_Postal_Region" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Regiones Staging\stg_regiones_G03.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Regiones Staging\stg_regiones_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Regiones Staging\stg_regiones_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Regiones Staging\stg_regiones_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Regiones Staging.Paths[Salida de origen de archivo plano]"
+              endId="Package\Carga Regiones Staging\stg_regiones_G03.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de origen de archivo plano"
+              startId="Package\Carga Regiones Staging\Source Regions Txt.Outputs[Salida de origen de archivo plano]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Table stg_regiones_G03"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{75ddffa8-4a8f-42b8-a1fe-29c8b9c0cd3f}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Table stg_regiones_G03"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{2E196D17-9603-4C0E-8632-DDE8AE06B642}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_regiones_G03]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{f635c41e-f742-4cb0-9608-80b7ea4a61ec}"
+      DTS:From="Package\Drop Table stg_regiones_G03"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Carga Regiones Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{8e2ee028-1395-419b-a014-da2056e04980}"
+      DTS:From="Package\Carga Regiones Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Carga Regiones Intermedia" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{6f1a347d-aadd-4986-ab31-a20efdcd6376}"
+      DTS:From="Package\Carga Regiones Intermedia"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Carga Regiones DW" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="180,42"
+          Id="Package\Carga Regiones DW"
+          TopLeft="280,315" />
+        <NodeLayout
+          Size="213,42"
+          Id="Package\Carga Regiones Intermedia"
+          TopLeft="263,225" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Carga Regiones Staging"
+          TopLeft="269,142" />
+        <NodeLayout
+          Size="232,42"
+          Id="Package\Drop Table stg_regiones_G03"
+          TopLeft="260,65" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="372.25,107">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="369,184">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,41"
+              Start="0,0"
+              End="0,33.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="369.75,267">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,48"
+              Start="0,0"
+              End="0,40.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,40.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Regiones Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="175,42"
+          Id="Package\Carga Regiones Staging\Source Regions Txt"
+          TopLeft="243.5,93.5" />
+        <NodeLayout
+          Size="169,42"
+          Id="Package\Carga Regiones Staging\stg_regiones_G03"
+          TopLeft="243.5,195.5" />
+        <EdgeLayout
+          Id="Package\Carga Regiones Staging.Paths[Salida de origen de archivo plano]"
+          TopLeft="329.5,135.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Regiones Staging\stg_regiones_G03">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

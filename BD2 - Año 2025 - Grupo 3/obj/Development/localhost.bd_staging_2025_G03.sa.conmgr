@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="localhost.bd_staging_2025_G03.sa"
+  DTS:DTSID="{0D9AF437-2004-48B9-810E-CD259096B4C0}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=localhost;User ID=sa;Initial Catalog=bd_staging_2025_G03;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-BD2 - Año 2025 - Grupo 3-{0D9AF437-2004-48B9-810E-CD259096B4C0}localhost.bd_staging_2025_G03.sa;Auto Translate=False;" />
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,2957 @@
+<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="10/22/2025 10:41:07 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="ROADM227"
+  DTS:CreatorName="WIENER-LAB\vlujambio"
+  DTS:DTSID="{1661309B-2297-4E68-9CCA-020C8821E080}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="16.0.5685.0"
+  DTS:LocaleID="11274"
+  DTS:ObjectName="Carga Clientes"
+  DTS:PackageType="5"
+  DTS:VersionBuild="25"
+  DTS:VersionGUID="{87E9C182-91B4-4968-BFA3-870353A14E2E}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Carga Stock]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{3306F116-5F23-4288-A2DD-68757A1C911E}"
+      DTS:ObjectName="Carga Stock">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="11274"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Stock.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Id_Producto_Stock"
+              DTS:DTSID="{C652EBB5-D989-49F2-BF71-AAB51BAC23D2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fecha_Stock"
+              DTS:DTSID="{9908229B-DFDE-4887-90A1-611B4EACCD2E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Cantidad_Producto_Stock"
+              DTS:DTSID="{5A70439D-35EB-447D-A2ED-70895A0DA8BF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{193A92DB-D209-4227-B984-8C4BA778FEB0}"
+      DTS:ObjectName="localhost">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{5DCA6D98-067B-4169-81EA-BE99E68133D8}"
+      DTS:ObjectName="localhost.bd_staging_2025_G03">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=bd_staging_2025_G03;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Regiones TXT]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{C7DC543F-C38E-40BD-A2F5-FA067D3BDDB7}"
+      DTS:ObjectName="Regiones TXT">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="11274"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Regions.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Region_Region"
+              DTS:DTSID="{A14E217C-BD37-4331-B434-0CD9C38654BF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ciudad_Region"
+              DTS:DTSID="{A4710AA6-599C-48F3-A4CF-5E26837B30C4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Distrito_Region"
+              DTS:DTSID="{8C825254-3B15-4F10-92C1-A5B3059942BD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Codigo_Postal_Region"
+              DTS:DTSID="{B586A1C4-445A-420A-A37B-E6CB505D9FCF}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[ROADM227.bd_staging_2025_G14.sa]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{41A98360-F3C5-49BF-82C6-372D65C75E16}"
+      DTS:ObjectName="ROADM227.bd_staging_2025_G14.sa">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectRetryCount="1"
+          DTS:ConnectRetryInterval="5"
+          DTS:ConnectionString="Data Source=ROADM227;User ID=sa;Initial Catalog=bd_staging_2025_G14;Provider=MSOLEDBSQL.1;Persist Security Info=True;Application Name=SSIS-Package1-{41A98360-F3C5-49BF-82C6-372D65C75E16}ROADM227.bd_staging_2025_G14.sa;Auto Translate=False;">
+          <DTS:Password
+            DTS:Name="Password"
+            Sensitive="1"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAiaO9OlmoEEGv6w6uCjAocQAAAAAIAAAARABUAFMAAAAQZgAAAAEAACAAAAAHrTEFyhTh6BgcI+amYhLHHagtlmz+CXgWALRdknNNxQAAAAAOgAAAAAIAACAAAADAu2AfVrHJXTSfOII5Nyb6/NUUmsWuxPsZuH60anbOcSAAAAB2knFiR9h0wpM6ylhLOBGaTXUDR5bpv+9KBNbvr7P6ZEAAAABW8VXM7eeTmR2Jj5W+XjGGv9KGibwDi5Y5naX5XmQN1m8Vu2OiHBh7AB2/FATzFuOpOQapIim4xIgXO68d5jAT</DTS:Password>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Carga Clientes Mayoristas Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{d1551dc1-3e86-4d8c-b498-6e24ce4dfe38}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Clientes Mayoristas Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
+              name="Origen Customer W XML"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Datos XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLData">C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Customer_W.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Definición de esquema XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Customer_W.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifica si se usará el esquema insertado."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo se asignan los tipos de enteros XML."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente]"
+                  name="cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[ZIPCODE]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      name="CUSTOMER_ID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      dataType="ui4"
+                      name="ZIPCODE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente]"
+                  isErrorOut="true"
+                  name="Salida de error de cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="nText"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      dataType="nText"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="nText"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      dataType="nText"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      dataType="nText"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      dataType="nText"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="stg_clientes_mayoristas_G03"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[stg_clientes_mayoristas_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
+                      cachedDataType="ui2"
+                      cachedName="CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FULL_NAME"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
+                      cachedDataType="ui4"
+                      cachedName="ZIPCODE"
+                      externalMetadataColumnId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente].Columns[ZIPCODE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      dataType="i4"
+                      name="Cliente_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      dataType="i8"
+                      name="Codigo_Postal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Clientes Mayoristas Staging.Paths[cliente]"
+              endId="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03.Inputs[Entrada de destino de OLE DB]"
+              name="cliente"
+              startId="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML.Outputs[cliente]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Clientes Minoristas Staging"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{01F05BBE-238D-41BC-9EDB-C388083117FE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Clientes Minoristas Staging"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML"
+              componentClassID="Microsoft.ManagedComponentHost"
+              contactInfo="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML.;Microsoft Corporation;Microsoft SQL Server; Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;2"
+              description="Extrae datos de un archivo XML. Por ejemplo, se usa para extraer los datos de catálogo de un archivo XML que representa catálogos y elementos de catálogo. Antes de usar la tarea, se debe especificar el esquema y generar una salida para cada elemento XML."
+              name="Origen Customer R XML"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.String"
+                  name="UserComponentTypeName">Microsoft.XmlSourceAdapter</property>
+                <property
+                  dataType="System.String"
+                  description="Datos XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLData">C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Customer_R.xml</property>
+                <property
+                  dataType="System.String"
+                  description="Variable que usa el adaptador de origen XML para especificar datos XML."
+                  name="XMLDataVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo obtiene el adaptador de origen XML los datos XML."
+                  name="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Definición de esquema XML que usa el adaptador de origen XML."
+                  expressionType="Notify"
+                  name="XMLSchemaDefinition">C:\Valentin\Personales\UNR\BD II\BD2-Tp grupo 3\Fuentes de datos\Customer_R.xsd</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Identifica si se usará el esquema insertado."
+                  name="UseInlineSchema">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Define cómo se asignan los tipos de enteros XML."
+                  name="XMLIntegerMapping"
+                  typeConverter="Microsoft.SqlServer.Dts.Pipeline.XmlSourceAdapter+XMLIntegerMappingConverter">0</property>
+              </properties>
+              <outputs>
+                <output
+                  refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente]"
+                  name="cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[FULL_NAME]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CITY]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[CITY]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CITY]"
+                      name="CITY"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[STATE]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[STATE]"
+                      length="255"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[STATE]"
+                      name="STATE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[ZIPCODE]"
+                      dataType="ui4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="ui2"
+                      name="CUSTOMER_ID">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt16</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[FULL_NAME]"
+                      dataType="wstr"
+                      length="255"
+                      name="FULL_NAME">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="BIRTH_DATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[CITY]"
+                      dataType="wstr"
+                      length="255"
+                      name="CITY">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[STATE]"
+                      dataType="wstr"
+                      length="255"
+                      name="STATE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.String</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].ExternalColumns[ZIPCODE]"
+                      dataType="ui4"
+                      name="ZIPCODE">
+                      <properties>
+                        <property
+                          dataType="System.String"
+                          name="CLRType">System.UInt32</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente]"
+                  isErrorOut="true"
+                  name="Salida de error de cliente">
+                  <properties>
+                    <property
+                      dataType="System.String"
+                      description="Identifica el conjunto de filas asociado a la salida."
+                      name="RowsetID">cliente</property>
+                  </properties>
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[CUSTOMER_ID]"
+                      name="CUSTOMER_ID" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[FULL_NAME]"
+                      name="FULL_NAME" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[BIRTH_DATE]"
+                      name="BIRTH_DATE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[CITY]"
+                      name="CITY" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[STATE]"
+                      name="STATE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      dataType="nText"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ZIPCODE]"
+                      name="ZIPCODE" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[CUSTOMER_ID]"
+                      dataType="nText"
+                      name="CUSTOMER_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[FULL_NAME]"
+                      dataType="nText"
+                      name="FULL_NAME" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[BIRTH_DATE]"
+                      dataType="nText"
+                      name="BIRTH_DATE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[CITY]"
+                      dataType="nText"
+                      name="CITY" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[STATE]"
+                      dataType="nText"
+                      name="STATE" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[Salida de error de cliente].ExternalColumns[ZIPCODE]"
+                      dataType="nText"
+                      name="ZIPCODE" />
+                  </externalMetadataColumns>
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="stg_clientes_minoristas_G03"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[stg_clientes_minoristas_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[CUSTOMER_ID]"
+                      cachedDataType="ui2"
+                      cachedName="CUSTOMER_ID"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CUSTOMER_ID]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[FULL_NAME]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="FULL_NAME"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[FULL_NAME]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[BIRTH_DATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="BIRTH_DATE"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[BIRTH_DATE]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[CITY]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="CITY"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[CITY]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[STATE]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="STATE"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[STATE]" />
+                    <inputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].Columns[ZIPCODE]"
+                      cachedDataType="ui4"
+                      cachedName="ZIPCODE"
+                      externalMetadataColumnId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      lineageId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente].Columns[ZIPCODE]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      dataType="i4"
+                      name="Cliente_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      dataType="i8"
+                      name="Codigo_Postal" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Clientes Minoristas Staging.Paths[cliente]"
+              endId="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03.Inputs[Entrada de destino de OLE DB]"
+              name="cliente"
+              startId="Package\Carga Clientes Minoristas Staging\Origen Customer R XML.Outputs[cliente]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga DW Clientes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:Disabled="True"
+      DTS:DTSID="{bc8088d0-67f8-4be3-a292-cdc9de71abba}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga DW Clientes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Carga Intermedia Clientes"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarea Flujo de datos"
+      DTS:DTSID="{B191DABA-4A12-4312-92AA-C8B16B02C513}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Carga Intermedia Clientes"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Carga Intermedia Clientes\Columna derivada"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carga Intermedia Clientes\Columna derivada.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada.Inputs[Entrada de columna derivada].Columns[Fecha_Nacimiento]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Nacimiento"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Carga Intermedia Clientes\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]"
+                      name="Tipo_Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">"Mayorista"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Mayorista"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]"
+                      name="Fecha_Nacimiento_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DATE)#{Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DATE)Fecha_Nacimiento</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Carga Intermedia Clientes\Columna derivada.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Intermedia Clientes\Columna derivada 1"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Columna derivada;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;0"
+              description="Crea nuevos valores de columna aplicando expresiones a las columnas de entrada de la transformación. Crea nuevas columnas o sobrescribe las columnas existentes. Por ejemplo, se concatenan los valores de las columnas 'nombre' y 'apellidos' para crear una columna 'nombre completo'."
+              name="Columna derivada 1"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Carga Intermedia Clientes\Columna derivada 1.Inputs[Entrada de columna derivada]"
+                  description="Entrada en la transformación Columna derivada"
+                  name="Entrada de columna derivada">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada 1.Inputs[Entrada de columna derivada].Columns[Fecha_Nacimiento]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Nacimiento"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada]"
+                  description="Salida predeterminada de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  name="Salida de columna derivada"
+                  synchronousInputId="Package\Carga Intermedia Clientes\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      length="9"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]"
+                      name="Tipo_Cliente"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">"Minorista"</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">"Minorista"</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]"
+                      dataType="date"
+                      errorOrTruncationOperation="Cálculo"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]"
+                      name="Fecha_Nacimiento_Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión de columna derivada"
+                          name="Expression">(DT_DATE)#{Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]}</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Expresión descriptiva de columna derivada"
+                          expressionType="Notify"
+                          name="FriendlyExpression">(DT_DATE)Fecha_Nacimiento</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de error de columna derivada]"
+                  description="Salida de error de la transformación Columna derivada"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de columna derivada"
+                  synchronousInputId="Package\Carga Intermedia Clientes\Columna derivada 1.Inputs[Entrada de columna derivada]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de error de columna derivada].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Intermedia Clientes\int_clientes_G03"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino de OLE DB"
+              name="int_clientes_G03"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[int_clientes_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si los valores proporcionados para columnas de identidad se van a copiar al destino. Si es False, los valores de las columnas de identidad se generan automáticamente en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica si las columnas que contienen NULL tendrán NULL insertado en el destino. Si es False, las columnas que contienen NULL tendrán sus valores predeterminados insertados en el destino. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica opciones para usar con la carga rápida. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica cuándo se emiten confirmaciones durante la inserción de datos. El valor 0 especifica que se emitirá una confirmación al final de la inserción de datos. Solo se aplica si está activada la carga rápida."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Intermedia Clientes\int_clientes_G03.Connections[OleDbConnection]"
+                  connectionManagerID="{E1009A67-EF8F-4169-85BF-E4FD59586B6A}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[localhost.bd_intermedia_2025_G03.sa]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB]"
+                  errorOrTruncationOperation="Insertar"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de destino de OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Cliente_Id]"
+                      cachedDataType="i4"
+                      cachedName="Cliente_Id"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Cliente_Id]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Nombre_Completo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Completo"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre_Completo]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Fecha_Nacimiento]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Nacimiento"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ciudad"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Ciudad]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Estado]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Estado"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Estado]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Codigo_Postal]"
+                      cachedDataType="i8"
+                      cachedName="Codigo_Postal"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Codigo_Postal]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Tipo_Cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Tipo_Cliente"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Tipo_Cliente]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Tipo_Cliente]" />
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].Columns[Fecha_Nacimiento_Date]"
+                      cachedDataType="date"
+                      cachedName="Fecha_Nacimiento_Date"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento_Date]"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento_Date]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Cliente_Id]"
+                      dataType="i4"
+                      name="Cliente_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Codigo_Postal]"
+                      dataType="i8"
+                      name="Codigo_Postal" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Tipo_Cliente]"
+                      dataType="wstr"
+                      length="9"
+                      name="Tipo_Cliente" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB].ExternalColumns[Fecha_Nacimiento_Date]"
+                      dataType="dbTimeStamp"
+                      name="Fecha_Nacimiento_Date" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\int_clientes_G03.Outputs[Salida de error de destino de OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Salida de error de destino de OLE DB"
+                  synchronousInputId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\int_clientes_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\int_clientes_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\int_clientes_G03.Outputs[Salida de error de destino de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Stg Clientes Mayoristas"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[stg_clientes_mayoristas_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Id]"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]"
+                      name="Cliente_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Completo]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]"
+                      name="Nombre_Completo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      name="Fecha_Nacimiento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Estado]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]"
+                      name="Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Postal]"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]"
+                      name="Codigo_Postal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Id]"
+                      dataType="i4"
+                      name="Cliente_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Postal]"
+                      dataType="i8"
+                      name="Codigo_Postal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Id]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Id]"
+                      name="Cliente_Id" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Completo]"
+                      name="Nombre_Completo" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      name="Fecha_Nacimiento" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Estado]"
+                      name="Estado" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Postal]"
+                      dataType="i8"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Postal]"
+                      name="Codigo_Postal" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas"
+              componentClassID="Microsoft.OLEDBSource"
+              contactInfo="Origen de OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;7"
+              description="Origen de OLE DB"
+              name="Stg Clientes Minoristas"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="Número de segundos antes de que se agote el tiempo de espera de un comando. Un valor de 0 indica un tiempo de espera infinito."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowset">[dbo].[stg_clientes_minoristas_G03]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica la variable que contiene el nombre del objeto de base de datos usado para abrir un conjunto de filas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="Comando SQL para ejecutar."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.String"
+                  description="Variable que contiene el comando SQL para ejecutar."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica la página de códigos de columna para utilizar cuando la información de página de códigos no está disponible en el origen de datos."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Fuerza el uso del valor de la propiedad DefaultCodePage al describir datos de caracteres."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica el modo utilizado para obtener acceso a la base de datos."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="Asignaciones entre los parámetros del comando SQL y las variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  connectionManagerRefId="Package.ConnectionManagers[localhost.bd_staging_2025_G03]"
+                  description="La conexión de tiempo de ejecución OLE DB usada para obtener acceso a la base de datos."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB]"
+                  name="Salida de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Id]"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]"
+                      name="Cliente_Id"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Completo]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]"
+                      name="Nombre_Completo"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      name="Fecha_Nacimiento"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Estado]"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]"
+                      name="Estado"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]"
+                      dataType="i8"
+                      errorOrTruncationOperation="Conversión"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Postal]"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]"
+                      name="Codigo_Postal"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Cliente_Id]"
+                      dataType="i4"
+                      name="Cliente_Id" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      name="Nombre_Completo" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fecha_Nacimiento" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ciudad" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      name="Estado" />
+                    <externalMetadataColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].ExternalColumns[Codigo_Postal]"
+                      dataType="i8"
+                      name="Codigo_Postal" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB]"
+                  isErrorOut="true"
+                  name="Salida de error de origen de OLE DB">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Id]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Cliente_Id]"
+                      name="Cliente_Id" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Nombre_Completo]"
+                      name="Nombre_Completo" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Fecha_Nacimiento]"
+                      name="Fecha_Nacimiento" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Estado]"
+                      name="Estado" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Postal]"
+                      dataType="i8"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[Codigo_Postal]"
+                      name="Codigo_Postal" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de error de origen de OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Carga Intermedia Clientes\Unión de todo"
+              componentClassID="Microsoft.UnionAll"
+              contactInfo="Unión de todo;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos los derechos reservados; http://www.microsoft.com/sql/support;1"
+              description="Combina las filas de varios flujos de datos sin ordenarlos. Por ejemplo, devuelve filas a un flujo de datos después de corregir los errores. Si el orden es importante, se recomienda usar la transformación Mezclar."
+              name="Unión de todo"
+              version="1">
+              <inputs>
+                <input
+                  refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1]"
+                  name="Entrada de Unión de todo 1">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Cliente_Id]"
+                      cachedDataType="i4"
+                      cachedName="Cliente_Id"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Cliente_Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Nombre_Completo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Completo"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre_Completo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Fecha_Nacimiento]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Nacimiento"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ciudad"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Estado]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Estado"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Estado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Codigo_Postal]"
+                      cachedDataType="i8"
+                      cachedName="Codigo_Postal"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Codigo_Postal]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Tipo_Cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Tipo_Cliente"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Tipo_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1].Columns[Fecha_Nacimiento_Date]"
+                      cachedDataType="date"
+                      cachedName="Fecha_Nacimiento_Date"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 2">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Cliente_Id]"
+                      cachedDataType="i4"
+                      cachedName="Cliente_Id"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Cliente_Id]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Cliente_Id]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Nombre_Completo]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Nombre_Completo"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Nombre_Completo]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre_Completo]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Fecha_Nacimiento]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Fecha_Nacimiento"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Fecha_Nacimiento]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Ciudad]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Ciudad"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Ciudad]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Ciudad]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Estado]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Estado"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Estado]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Estado]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Codigo_Postal]"
+                      cachedDataType="i8"
+                      cachedName="Codigo_Postal"
+                      lineageId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB].Columns[Codigo_Postal]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Codigo_Postal]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Tipo_Cliente]"
+                      cachedDataType="wstr"
+                      cachedLength="9"
+                      cachedName="Tipo_Cliente"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Tipo_Cliente]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Tipo_Cliente]}</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2].Columns[Fecha_Nacimiento_Date]"
+                      cachedDataType="date"
+                      cachedName="Fecha_Nacimiento_Date"
+                      lineageId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada].Columns[Fecha_Nacimiento_Date]">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Id. de linaje de columna de salida"
+                          name="OutputColumnLineageID">#{Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento_Date]}</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+                <input
+                  refId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 3]"
+                  dangling="true"
+                  hasSideEffects="true"
+                  name="Entrada de Unión de todo 3">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1]"
+                  name="Salida de Unión de todo 1">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Cliente_Id]"
+                      dataType="i4"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Cliente_Id]"
+                      name="Cliente_Id" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre_Completo]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Nombre_Completo]"
+                      name="Nombre_Completo" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento]"
+                      name="Fecha_Nacimiento" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Ciudad]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Ciudad]"
+                      name="Ciudad" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Estado]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Estado]"
+                      name="Estado" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Codigo_Postal]"
+                      dataType="i8"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Codigo_Postal]"
+                      name="Codigo_Postal" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Tipo_Cliente]"
+                      dataType="wstr"
+                      length="9"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Tipo_Cliente]"
+                      name="Tipo_Cliente" />
+                    <outputColumn
+                      refId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento_Date]"
+                      dataType="date"
+                      lineageId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1].Columns[Fecha_Nacimiento_Date]"
+                      name="Fecha_Nacimiento_Date" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Carga Intermedia Clientes.Paths[Salida de columna derivada]"
+              endId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 1]"
+              name="Salida de columna derivada"
+              startId="Package\Carga Intermedia Clientes\Columna derivada.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Carga Intermedia Clientes.Paths[Salida de columna derivada1]"
+              endId="Package\Carga Intermedia Clientes\Unión de todo.Inputs[Entrada de Unión de todo 2]"
+              name="Salida de columna derivada"
+              startId="Package\Carga Intermedia Clientes\Columna derivada 1.Outputs[Salida de columna derivada]" />
+            <path
+              refId="Package\Carga Intermedia Clientes.Paths[Salida de origen de OLE DB]"
+              endId="Package\Carga Intermedia Clientes\Columna derivada.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Carga Intermedia Clientes.Paths[Salida de origen de OLE DB1]"
+              endId="Package\Carga Intermedia Clientes\Columna derivada 1.Inputs[Entrada de columna derivada]"
+              name="Salida de origen de OLE DB"
+              startId="Package\Carga Intermedia Clientes\Stg Clientes Minoristas.Outputs[Salida de origen de OLE DB]" />
+            <path
+              refId="Package\Carga Intermedia Clientes.Paths[Salida de Unión de todo 1]"
+              endId="Package\Carga Intermedia Clientes\int_clientes_G03.Inputs[Entrada de destino de OLE DB]"
+              name="Salida de Unión de todo 1"
+              startId="Package\Carga Intermedia Clientes\Unión de todo.Outputs[Salida de Unión de todo 1]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Clientes DW"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:Disabled="True"
+      DTS:DTSID="{E173E8E8-3E3D-4F7F-BB4B-EFEB7080FF3B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Clientes DW"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Int_Clientes"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{480A1A53-4853-412C-A78E-389B40AEAC23}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Int_Clientes"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{E1009A67-EF8F-4169-85BF-E4FD59586B6A}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].int_clientes_G03]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Table stg_clientes_mayoristas_G03"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{554c979d-4713-4ed4-bbd0-91ac67503835}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Table stg_clientes_mayoristas_G03"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5DCA6D98-067B-4169-81EA-BE99E68133D8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_clientes_mayoristas_G03]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Drop Table stg_clientes_minoristas_G03"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Tarea Ejecutar SQL"
+      DTS:DTSID="{4386F652-DA73-451D-9191-353F3A1C69D9}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Drop Table stg_clientes_minoristas_G03"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2022; © 2022 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{5DCA6D98-067B-4169-81EA-BE99E68133D8}"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE [dbo].[stg_clientes_minoristas_G03]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción]"
+      DTS:CreationName=""
+      DTS:DTSID="{9C5097E3-F6EA-490C-8721-884B6416192C}"
+      DTS:From="Package\Drop Table stg_clientes_minoristas_G03"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción"
+      DTS:To="Package\Carga Clientes Minoristas Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{79258FD2-0328-4459-BC6B-541DA4A45F50}"
+      DTS:From="Package\Carga Clientes Mayoristas Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 1"
+      DTS:To="Package\Drop Int_Clientes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{E7F44C11-3F43-4687-880A-5F33D9063AB1}"
+      DTS:From="Package\Carga Clientes Minoristas Staging"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 2"
+      DTS:To="Package\Drop Int_Clientes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 3]"
+      DTS:CreationName=""
+      DTS:DTSID="{b3dccb15-4f14-45ee-9739-4e759267fbe8}"
+      DTS:From="Package\Drop Table stg_clientes_mayoristas_G03"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 3"
+      DTS:To="Package\Carga Clientes Mayoristas Staging" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 4]"
+      DTS:CreationName=""
+      DTS:DTSID="{9BF0E402-291D-412F-B64E-0072BC379ABA}"
+      DTS:From="Package\Carga Intermedia Clientes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 4"
+      DTS:To="Package\Drop Clientes DW" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 5]"
+      DTS:CreationName=""
+      DTS:DTSID="{2164E6E8-7A97-4F22-B7D3-BF837B75CC42}"
+      DTS:From="Package\Drop Int_Clientes"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 5"
+      DTS:To="Package\Carga Intermedia Clientes" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Restricción 6]"
+      DTS:CreationName=""
+      DTS:DTSID="{868AE4BF-0F27-4267-9C5D-272BFA825C41}"
+      DTS:From="Package\Drop Clientes DW"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Restricción 6"
+      DTS:To="Package\Carga DW Clientes" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
+<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
+<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<Objects
+  Version="8">
+  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="248,42"
+          Id="Package\Carga Clientes Mayoristas Staging"
+          TopLeft="508,149" />
+        <NodeLayout
+          Size="245,42"
+          Id="Package\Carga Clientes Minoristas Staging"
+          TopLeft="12,145" />
+        <NodeLayout
+          Size="173,42"
+          Id="Package\Carga DW Clientes"
+          TopLeft="283,465.5" />
+        <NodeLayout
+          Size="207,43"
+          Id="Package\Carga Intermedia Clientes"
+          TopLeft="266.5,311.5" />
+        <NodeLayout
+          Size="167,42"
+          Id="Package\Drop Clientes DW"
+          TopLeft="277.5,392.086956521739" />
+        <NodeLayout
+          Size="164,42"
+          Id="Package\Drop Int_Clientes"
+          TopLeft="282.208333333333,225.87389380531" />
+        <NodeLayout
+          Size="281,42"
+          Id="Package\Drop Table stg_clientes_mayoristas_G03"
+          TopLeft="499,72" />
+        <NodeLayout
+          Size="278,42"
+          Id="Package\Drop Table stg_clientes_minoristas_G03"
+          TopLeft="1,67" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción]"
+          TopLeft="137.25,109">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36"
+              Start="0,0"
+              End="0,28.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 1]"
+          TopLeft="632,191">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-267.791666666667,34.8738938053098"
+              Start="0,0"
+              End="-267.791666666667,27.3738938053098">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,13.4369469026549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,13.4369469026549"
+                    Point2="0,17.4369469026549"
+                    Point3="-4,17.4369469026549" />
+                  <mssgle:LineSegment
+                    End="-263.791666666667,17.4369469026549" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-263.791666666667,17.4369469026549"
+                    Point2="-267.791666666667,17.4369469026549"
+                    Point3="-267.791666666667,21.4369469026549" />
+                  <mssgle:LineSegment
+                    End="-267.791666666667,27.3738938053098" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 2]"
+          TopLeft="134.5,187">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="203.708333333333,38.8738938053098"
+              Start="0,0"
+              End="203.708333333333,31.3738938053098">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,19.0989803770681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,19.0989803770681"
+                    Point2="0,23.0989803770681"
+                    Point3="4,23.0989803770681" />
+                  <mssgle:LineSegment
+                    End="199.708333333333,23.0989803770681" />
+                  <mssgle:CubicBezierSegment
+                    Point1="199.708333333333,23.0989803770681"
+                    Point2="203.708333333333,23.0989803770681"
+                    Point3="203.708333333333,27.0989803770681" />
+                  <mssgle:LineSegment
+                    End="203.708333333333,31.3738938053098" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 3]"
+          TopLeft="635.75,114">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35"
+              Start="0,0"
+              End="0,27.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 4]"
+          TopLeft="370,354.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-9,37.5869565217391"
+              Start="0,0"
+              End="-9,30.0869565217391">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,14.7934782608696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,14.7934782608696"
+                    Point2="0,18.7934782608696"
+                    Point3="-4,18.7934782608696" />
+                  <mssgle:LineSegment
+                    End="-5,18.7934782608696" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-5,18.7934782608696"
+                    Point2="-9,18.7934782608696"
+                    Point3="-9,22.7934782608696" />
+                  <mssgle:LineSegment
+                    End="-9,30.0869565217391" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 5]"
+          TopLeft="367.104166666667,267.87389380531">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.6261061946902"
+              Start="0,0"
+              End="0,36.1261061946902">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,36.1261061946902" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Restricción 6]"
+          TopLeft="361,434.086956521739">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="8.5,31.4130434782609"
+              Start="0,0"
+              End="8.5,23.9130434782609">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,11.7065217391304" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,11.7065217391304"
+                    Point2="0,15.7065217391304"
+                    Point3="4,15.7065217391304" />
+                  <mssgle:LineSegment
+                    End="4.5,15.7065217391304" />
+                  <mssgle:CubicBezierSegment
+                    Point1="4.5,15.7065217391304"
+                    Point2="8.5,15.7065217391304"
+                    Point3="8.5,19.7065217391304" />
+                  <mssgle:LineSegment
+                    End="8.5,23.9130434782609" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Carga Clientes Mayoristas Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="223,42"
+          Id="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03"
+          TopLeft="221.5,189.5" />
+        <NodeLayout
+          Size="202,42"
+          Id="Package\Carga Clientes Mayoristas Staging\Origen Customer W XML"
+          TopLeft="226.5,81.5" />
+        <EdgeLayout
+          Id="Package\Carga Clientes Mayoristas Staging.Paths[cliente]"
+          TopLeft="330.25,123.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Clientes Mayoristas Staging\stg_clientes_mayoristas_G03">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga Clientes Minoristas Staging">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="220,42"
+          Id="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03"
+          TopLeft="221.5,189.5" />
+        <NodeLayout
+          Size="199,42"
+          Id="Package\Carga Clientes Minoristas Staging\Origen Customer R XML"
+          TopLeft="226.5,81.5" />
+        <EdgeLayout
+          Id="Package\Carga Clientes Minoristas Staging.Paths[cliente]"
+          TopLeft="328.75,123.5">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,66"
+              Start="0,0"
+              End="0,58.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,58.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Clientes Minoristas Staging\stg_clientes_minoristas_G03">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Carga Intermedia Clientes">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="177,42"
+          Id="Package\Carga Intermedia Clientes\Columna derivada 1"
+          TopLeft="316.857142857143,117.428571428572" />
+        <NodeLayout
+          Size="161,42"
+          Id="Package\Carga Intermedia Clientes\int_clientes_G03"
+          TopLeft="146.357142857143,363.928571428572" />
+        <NodeLayout
+          Size="194,42"
+          Id="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas"
+          TopLeft="14.5238095238095,18.5396825396826" />
+        <NodeLayout
+          Size="191,42"
+          Id="Package\Carga Intermedia Clientes\Stg Clientes Minoristas"
+          TopLeft="308.357142857143,22.9285714285715" />
+        <NodeLayout
+          Size="147,42"
+          Id="Package\Carga Intermedia Clientes\Unión de todo"
+          TopLeft="151.857142857143,271.428571428572" />
+        <NodeLayout
+          Size="168,42"
+          Id="Package\Carga Intermedia Clientes\Columna derivada"
+          TopLeft="24.8571428571429,122.428571428572" />
+        <EdgeLayout
+          Id="Package\Carga Intermedia Clientes.Paths[Salida de Unión de todo 1]"
+          TopLeft="226.107142857143,313.428571428572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,50.5"
+              Start="0,0"
+              End="0,43">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,43" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Intermedia Clientes.Paths[Salida de origen de OLE DB1]"
+          TopLeft="404.607142857143,64.9285714285715">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5"
+              Start="0,0"
+              End="0,45">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Intermedia Clientes.Paths[Salida de origen de OLE DB]"
+          TopLeft="110.190476190476,60.5396825396826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.8888888888889"
+              Start="0,0"
+              End="0,54.3888888888889">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.3888888888889" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Intermedia Clientes.Paths[Salida de columna derivada1]"
+          TopLeft="405.357142857143,159.428571428572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-156.833333333333,112"
+              Start="0,0"
+              End="-156.833333333333,104.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,62.4764468371467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,62.4764468371467"
+                    Point2="0,66.4764468371467"
+                    Point3="-4,66.4764468371467" />
+                  <mssgle:LineSegment
+                    End="-152.833333333333,66.4764468371467" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-152.833333333333,66.4764468371467"
+                    Point2="-156.833333333333,66.4764468371467"
+                    Point3="-156.833333333333,70.4764468371467" />
+                  <mssgle:LineSegment
+                    End="-156.833333333333,104.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Carga Intermedia Clientes.Paths[Salida de columna derivada]"
+          TopLeft="108.857142857143,164.428571428572">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="116.5,107"
+              Start="0,0"
+              End="116.5,99.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,49.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,49.5"
+                    Point2="0,53.5"
+                    Point3="4,53.5" />
+                  <mssgle:LineSegment
+                    End="112.5,53.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="112.5,53.5"
+                    Point2="116.5,53.5"
+                    Point3="116.5,57.5" />
+                  <mssgle:LineSegment
+                    End="116.5,99.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Intermedia Clientes\int_clientes_G03">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Intermedia Clientes\Stg Clientes Mayoristas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Carga Intermedia Clientes\Stg Clientes Minoristas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

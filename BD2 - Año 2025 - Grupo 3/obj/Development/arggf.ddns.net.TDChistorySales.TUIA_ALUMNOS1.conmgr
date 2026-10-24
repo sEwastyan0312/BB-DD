@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="arggf.ddns.net.TDChistorySales.TUIA_ALUMNOS1"
+  DTS:DTSID="{139F671B-59A8-4CB3-B3CC-5A15CAF2B5E5}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectRetryCount="1"
+      DTS:ConnectRetryInterval="5"
+      DTS:ConnectionString="Data Source=arggf.ddns.net;User ID=TUIA_ALUMNOS;Initial Catalog=TDChistorySales;Provider=MSOLEDBSQL.1;Persist Security Info=True;Auto Translate=False;Application Name=SSIS-BD2 - Año 2025 - Grupo 3-{139F671B-59A8-4CB3-B3CC-5A15CAF2B5E5}arggf.ddns.net.TDChistorySales.TUIA_ALUMNOS1;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGwRPTYeqw0qP+RfAo2pFogAAAAACAAAAAAAQZgAAAAEAACAAAABkOaVeUveaIEcIEGqjQlDlXnA+7qA/3PIjJvtKf3TmOwAAAAAOgAAAAAIAACAAAADsEbRnuyIlw48xURdKdsmpf53wDhKEgo5b/pBj44EMRIAAAAAmaUOM3lX4U7KZKf8EA/X1kwEOZ60wQk9u3s3Xyu0AJoTtCq5+mlmBuZstke5q+UvsujFYjDBrt24bbFwiHH/mydHzvVdD8lW7eyTtYX1OY20dXlp5QtUdArcTDj5Qp1+wTnNbfPOBXRE8dMIdA00MNQrGQEz36fBBIDaqyvijqEAAAACv/2war2yS9kP0YetJnSkRspWRHFxJZy6wAWi2itU99UTXXbbjrivWbixN/SeNZcsUOSA4LOectJPWzCdHH5Np</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

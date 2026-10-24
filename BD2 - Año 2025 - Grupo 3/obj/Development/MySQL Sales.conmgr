@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="sales_mysql.tuia_alumnos"
+  DTS:DTSID="{3E456F49-9DAD-4282-AEED-1DA002EA42FC}"
+  DTS:CreationName="ADO.NET:Microsoft.Data.SqlClient.SqlConnection, Microsoft.Data.SqlClient, Version=5.0.0.0, Culture=neutral, PublicKeyToken=23ec7fc2d6eaa4a5">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=arggf.ddns.net;User ID=tuia_alumnos;Persist Security Info=True;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGwRPTYeqw0qP+RfAo2pFogAAAAACAAAAAAAQZgAAAAEAACAAAACPSEoSst2iNyFVwczn3X7Xhq1yZ/2XlqbmgY11zqmyxwAAAAAOgAAAAAIAACAAAADht1XIHtpnZumsUsm+46PkUKQorzIJevZY8tSjLkD9AIAAAACD6CB5ihGa0tLdIkm+1V+jJneyKnnzn+icnOw89idzPmzEnoF9VQwtYATRxqKJeEh8Bw9aBEyYLMKflJMivr9NMqmwg9pAP6fRygcrpXfU9qnpMta9rLB1schXcpic3VIibvBHLd4aH/RdcmlrW6zcTSmzX+8nM5t+gjXzvp58w0AAAADDq+/W2ddD6vXTjmeQeHXa/skYklGSVMrcINwp8ykJQUbMMqygLSs/+AWhY3bAVJ29xtE8Msn/ASWT+wRfzgMB</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
