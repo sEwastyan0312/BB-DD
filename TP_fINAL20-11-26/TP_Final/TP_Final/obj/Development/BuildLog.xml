@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<BuildLog xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <ProjectInfo>
+    <Name>TP_Final</Name>
+    <LastWriteTime>2026-11-20T00:01:11.1517307Z</LastWriteTime>
+    <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+    <Salt>j9qcjnc3</Salt>
+    <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApEeRQRDdmUOcZFuA8VwCWQAAAAACAAAAAAAQZgAAAAEAACAAAACm2Fh1r8vIQUG/TcdrifAPbbOgkRoH6ZwJ9a+frQf13AAAAAAOgAAAAAIAACAAAADSMVgVpDlY/vYKUQkTgA4f106jD7PZ8t0F6JMKtFt4EDAAAAAa6EMWm1RNkCKaqG5HfoB8u0As92I9fuUVDtfPCH35LvrmtDRc5Q4b9cu0Wj/C381AAAAAV6NIcflyxLTGqGAoDTUY29vff22jDX2K+lAuKYipEGdv/P8ijn/QmkYCdLmDC2n8nYEBJtRybPEP+3Dd+oVRiw==</LastKnownProtectedHashedPassword>
+  </ProjectInfo>
+  <LastBuildInfos>
+    <ProjectBuildItemInfo>
+      <Name>Package.dtsx</Name>
+      <LastWriteTime>2026-11-20T22:40:01.3587739Z</LastWriteTime>
+      <LastKnownProtectionLevel>EncryptSensitiveWithPassword</LastKnownProtectionLevel>
+      <Salt>ZDBdu265</Salt>
+      <LastKnownProtectedHashedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApEeRQRDdmUOcZFuA8VwCWQAAAAACAAAAAAAQZgAAAAEAACAAAADXrma1cD3n3Zglk5iZ64VGnieGR5SpgrPcKSPk95AMOgAAAAAOgAAAAAIAACAAAADBCWFDKGFS7NnqO6LfdALJ9Nr8fBxGDwRBZL8I4vTExjAAAAB3Th1h7WQkAValjrppn1gKAT3OawcljhDOMZTDus3BzNm0uUPPkIXfQMW18BgevnRAAAAAwWtJljA+/q58llhD97TQ8XP6bj3+FLtEodbekzJZxpLKqifuealw1/FCCEUyT18/v1J0vrqth1wfdbKob2T8ZA==</LastKnownProtectedHashedPassword>
+    </ProjectBuildItemInfo>
+  </LastBuildInfos>
+</BuildLog>
